@@ -1,0 +1,116 @@
+body {
+    background: #d9dcef ;
+}
+
+.wrapper {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ width: 100%;
+ height: 1000px;
+}
+
+p{
+font-family: monospace;
+font-size: 20px;
+text-transform: uppercase;
+}
+
+button {
+    position: relative;
+    display: block;
+    height: 45px;
+    width:150px;
+    margin: 10px 7px;
+    padding: 5px 5px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: black;
+    border: 2px black solid;
+    border-radius: 4px;
+    text-transform: uppercase;
+    outline: 0;
+    overflow: hidden;
+    background: none;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.fill-up:hover, .fill-right:hover, .wave-btn:hover, .gradient-btn:hover {
+    color: #4D5264;
+}
+
+.fill-up::before {
+    content: "";
+    position: absolute;
+    background: #ade8f4;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: -1;
+    -webkit-transition: top .8s ease-in;
+}
+
+.fill-up:hover::before {
+    top:0;
+}
+  
+.fill-right::before {
+content: "";
+position: absolute;
+background: #ade8f4;
+bottom: 0;
+left: 0;
+right: 100%;
+top:0;
+z-index: -1;
+-webkit-transition: right .8s ease-in;
+}
+
+.fill-right:hover::before {
+    right:0;
+}
+
+.wave-btn::before {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 130px;
+    background-color:#ade8f4;
+    top:50px;
+    left: 50%;
+    transform: translate(-90%);
+    animation: wave 7s infinite linear;
+    transition: all 3s;
+    z-index: -1;
+}
+
+.wave-btn:hover::before {
+    top:-5px;
+}
+
+@keyframes wave {
+
+   0% {
+    transform: translate(-50%) rotate(-180deg);
+   }
+
+   100% {
+    transform: translate(-50%) rotate(360deg);
+   }
+}
+
+.gradient-btn {
+    border-image:linear-gradient(90deg, hsla(288, 20%, 75%, 1) 0%, hsla(197, 65%, 42%, 1) 100%) 1;
+}
+
+.gradient-btn:hover {
+    background:linear-gradient(to bottom left, #ff99ff 6%, #ccffff 88%) ;
+    border: 2px #023047 solid ;
+}
+
+.gradient-btn::before {
+ -webkit-transition: top .8s ease-in;
+}
