@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anek+Telugu:wght@200&family=Baskervville&family=Cormorant+Garamond:ital,wght@1,500&family=Dosis:wght@500&family=Inconsolata&family=Josefin+Sans:ital,wght@1,500&family=Karla:wght@200&family=Quicksand:wght@500&family=Spectral:wght@300&family=Square+Peg&display=swap');
+
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+	font-family: 'Josefin Sans', sans-serif;
+	text-transform: uppercase;
+    font-size: 45px;
+   letter-spacing: 2px;
+}
+
+body{
+    background-color: #f5e5fb;
+    height: 100vh;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+p{
+	margin: 0 10px;
+}
+
+.wrapper{
+    height:100px;
+	display: flex;
+}
+
+.wrapper::before {
+content: "'";
+font-size: 50px;
+}
+
+.wrapper::after {
+content: "'";
+font-size: 50px;
+}
+
+.wrapper::before,.wrapper::after {
+	-webkit-animation-name: display;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+}
+
+.words{
+	margin: 0 10px;
+    overflow: hidden;
+}
+
+span{
+    display: block;
+    height: 100%;
+    padding-left: 10px;
+    color: rgb(100, 153, 233);
+	-webkit-animation-name: spin;
+	-webkit-animation-duration:8s;
+    -webkit-animation-iteration-count: infinite;
+
+}
+
+@-webkit-keyframes display {
+
+	0%, 100% {
+		opacity:0;
+	}
+
+	50% {
+		opacity:1;
+	}
+
+  }
+
+@-webkit-keyframes spin {
+
+	0% {
+		transform:translateY(0%);
+	 }
+	
+	20% {
+		transform: translateY(10%);
+	}
+
+	40%{
+		transform:translateY(-90%);
+	}
+	
+	60%{
+		transform:translateY(-100%);
+	}
+	
+	80%{
+		transform: translateY(-200%);
+	}
+	
+	100%{
+		transform: translateY(-300%);
+	}
+	
+}
